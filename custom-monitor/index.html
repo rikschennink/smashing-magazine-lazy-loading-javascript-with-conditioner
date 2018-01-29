@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width">
+  <title>Custom Monitor</title>
+
+  <link rel="stylesheet" href="../styles.css">
+  
+</head>
+<body>
+
+  <a href="../">Back</a>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+
+  <p>Scroll down</p>
+  
+	<a href="cat-nom.png" 
+     data-module="lazyImage" 
+     data-context="was @visible">
+    A red cat eating a yellow bird
+  </a>
+
+	<script src="https://unpkg.com/conditioner-core/conditioner-core.js"></script>
+
+  <script>
+  conditioner.addPlugin({
+	  moduleSetName: name => `./${ name }.js`,
+    moduleImport: name => import(name),
+    moduleGetConstructor: module => module.default
+  });
+
+  conditioner.addPlugin({
+    monitor: {
+      name: 'visible',
+      create: (context, element) => ({
+        matches: false,
+        addListener (change) {
+          new IntersectionObserver(entries => {
+            this.matches = entries.pop().isIntersecting == context;
+            change();
+          }).observe(element);
+        }
+      })
+    }
+  });
+
+  conditioner.hydrate(document.documentElement);
+  </script>
+
+</body>
+</html>

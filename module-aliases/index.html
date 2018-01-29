@@ -4,7 +4,7 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <title>Switching to Conditioner</title>
+  <title>Module Aliases</title>
   
   <link rel="stylesheet" href="../styles.css">
 
@@ -14,14 +14,18 @@
   <a href="../">Back</a>
   
   <form>
-	  <input type="text" data-module="createAutocomplete">
+	  <input type="text" data-module="autocomplete"/>
   </form>
 
-	<script src="autocomplete.js"></script>
-	
 	<script src="https://unpkg.com/conditioner-core/conditioner-core.js"></script>
 
   <script>
+  conditioner.addPlugin({
+	  moduleSetName: name => `./${ name }.js`,
+    moduleImport: name => import(name),
+    moduleGetConstructor: module => module.default
+  });
+
   conditioner.hydrate(document.documentElement);
   </script>
 

@@ -1,22 +1,9 @@
-export default element => {
+export default (element, options) => {
     // This component is for demo purpose only, do not use it in production
     // Use Awesomplete by Lea Verou instead http://leaverou.github.io/awesomplete/
 
     // database
-    var db = [
-        'C',
-        'C++',
-        'Go',
-        'Java',
-        'Python',
-        'PHP',
-        'Erlang',
-        'Haskell',
-        'Go',
-        'JavaScript',
-        'Scala',
-        'Ruby'
-    ];
+    const db = options.source.split(',').map(source => source.trim());
 
     // creates the search result list
     var output = document.createElement('ul');

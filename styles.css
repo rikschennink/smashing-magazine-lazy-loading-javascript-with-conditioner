@@ -1,0 +1,93 @@
+html {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+        Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.5;
+}
+
+body {
+    padding: 2rem;
+}
+
+a {
+    color: #354ed8;
+    text-decoration-color: #b4c0ff;
+    text-decoration-line: underline;
+    text-decoration-skip: ink;
+}
+
+form {
+    margin-top: 2em;
+}
+
+/**
+ * Section Toggle
+ */
+h1 svg {
+    position: absolute;
+    right: 0;
+    top: 0.5em;
+    width: 1em;
+}
+
+h1 button {
+    all: inherit;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 2em;
+    cursor: pointer;
+}
+
+h1 button:focus svg {
+    outline: 2px solid;
+}
+
+[aria-expanded='true'] svg {
+    transform: scaleY(-1);
+}
+
+/**
+ * Autocomplete
+ */
+input,
+ul button {
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+input,
+input + ul {
+    box-sizing: border-box;
+    width: 10em;
+    border: 2px solid #aaa;
+    border-radius: 0.5rem;
+    margin: 0;
+}
+
+input {
+    padding: 0.5rem 0.625rem;
+    box-shadow: inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15);
+}
+
+input + ul:empty {
+    display: none;
+}
+
+input + ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul button {
+    padding: 0.5rem 0.625rem;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}

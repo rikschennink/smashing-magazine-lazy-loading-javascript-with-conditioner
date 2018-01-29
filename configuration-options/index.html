@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width">
+  <title>Configuration Options</title>
+  
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <a href="../">Back</a>
+  
+  <form>
+	  <input type="text" 
+           data-module="autocomplete" 
+           data-source="C, C++, Go, Java, Python, PHP, Erlang, Haskell, Go, JavaScript, Scala, Ruby"/>
+  </form>
+
+	<script src="https://unpkg.com/conditioner-core/conditioner-core.js"></script>
+
+  <script>
+  const pageOptions = {
+    autocomplete: {
+      key: 'abc123' // api key
+    }
+  }
+
+  conditioner.addPlugin({
+	  moduleSetName: name => `./${ name }.js`,
+    moduleImport: name => import(name),
+    moduleGetConstructor: module => module.default,
+    moduleSetConstructorArguments: (name, element) => ([
+      element,
+      Object.assign({}, 
+        pageOptions[element.dataset.module], 
+        element.dataset
+      )
+    ])
+  });
+
+  conditioner.hydrate(document.documentElement);
+  </script>
+
+</body>
+</html>

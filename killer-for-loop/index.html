@@ -3,25 +3,31 @@
 <head>
 
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width">
   <title>Killer for loop</title>
 
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-	<input type="text" data-module="createAutocomplete">
+  <a href="../">Back</a>
 
-	<script src="autocomplete.js"></script>
+  <form>
+    <input type="text" data-module="createAutocomplete">
+  </form>
 
-	<script>
-		
-	var elements = document.querySelectorAll('[data-module]');
+  <script src="autocomplete.js"></script>
 
-	for (var i = 0; i < elements.length; i++) {
-			var name = elements[i].getAttribute('data-module');
-			var factory = window[name];
-			factory(elements[i]);
-	}
-	</script>
-	
+  <script>
+
+  var elements = document.querySelectorAll('[data-module]');
+
+  for (var i = 0; i < elements.length; i++) {
+    var name = elements[i].getAttribute('data-module');
+    var factory = window[name];
+    factory(elements[i]);
+  }
+  </script>
+
 </body>
 </html>

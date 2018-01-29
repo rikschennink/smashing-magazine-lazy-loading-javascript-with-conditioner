@@ -4,22 +4,32 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <title>Importing Modules</title>
-  
+  <title>Conditional Loading</title>
+
   <link rel="stylesheet" href="../styles.css">
+  
 </head>
 <body>
-
+  
   <a href="../">Back</a>
   
-  <form>
-	  <input type="text" data-module="./autocomplete.js"/>
-  </form>
+	<nav>
+    <h1 data-module="sectionToggle" 
+        data-context="@media (max-width:30em)">
+        Navigation
+    </h1>
+    <ul>
+      <li><a href="../">home</a></li>
+      <li><a href="../">about</a></li>
+      <li><a href="../">contact</a></li>
+    </ul>
+  </nav>
 
 	<script src="https://unpkg.com/conditioner-core/conditioner-core.js"></script>
 
   <script>
   conditioner.addPlugin({
+	  moduleSetName: name => `./${ name }.js`,
     moduleImport: name => import(name),
     moduleGetConstructor: module => module.default
   });

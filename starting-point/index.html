@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <title>Starting point</title>
+
+</head>
+<body>
+
+  <input type="text" class="autocomplete"/>
+
+  <script src="autocomplete.js"></script>
+
+  <script>
+  var inputs = document.querySelectorAll('.autocomplete');
+
+  for (var i = 0; i < inputs.length; i++) {
+    createAutocomplete(inputs[i]);
+  }
+  </script>
+
+</body>
+</html>

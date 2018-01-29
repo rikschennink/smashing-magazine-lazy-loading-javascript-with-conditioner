@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <title>Importing Modules</title>
+  
+</head>
+<body>
+  
+	<input type="text" data-module="./autocomplete.js"/>
+
+	<script src="https://unpkg.com/conditioner-core/conditioner-core.js"></script>
+
+  <script>
+  conditioner.addPlugin({
+    moduleImport: name => import(name),
+    moduleGetConstructor: module => module.default
+  });
+
+  conditioner.hydrate(document.documentElement);
+  </script>
+
+</body>
+</html>

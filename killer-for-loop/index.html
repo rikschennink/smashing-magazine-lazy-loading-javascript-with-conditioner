@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <title>Killer for loop</title>
+
+</head>
+<body>
+
+	<input type="text" data-module="createAutocomplete">
+
+	<script src="autocomplete.js"></script>
+
+	<script>
+		
+	var elements = document.querySelectorAll('[data-module]');
+
+	for (var i = 0; i < elements.length; i++) {
+			var name = elements[i].getAttribute('data-module');
+			var factory = window[name];
+			factory(elements[i]);
+	}
+	</script>
+	
+</body>
+</html>

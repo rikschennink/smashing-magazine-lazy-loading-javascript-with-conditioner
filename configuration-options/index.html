@@ -4,18 +4,24 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <title>Configuration Options</title>
+  <title>Configuration options</title>
   
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-  <a href="../">Back</a>
+  <a href="../">Index</a>
+
+  <h1>Configuration options</h1>
   
+  <p>Search for a programming language like "JavaScript". The Autocomplete is bound to the <code>&lt;input/&gt;</code> using the <code>data-module</code> attribute. We supply the available programming languages using the <code>data-source</code> attribute.</p>
+
   <form>
-	  <input type="text" 
-           data-module="autocomplete" 
-           data-source="C, C++, Go, Java, Python, PHP, Erlang, Haskell, Go, JavaScript, Scala, Ruby"/>
+    <label for="languages">Programming languages</label>
+    <input type="text" 
+           id="languages" 
+           data-module="autocomplete"
+           data-source="C, C++, Go, Java, Python, PHP, Erlang, Haskell, Go, JavaScript, Scala, Ruby">
   </form>
 
 	<script src="https://unpkg.com/conditioner-core/conditioner-core.js"></script>

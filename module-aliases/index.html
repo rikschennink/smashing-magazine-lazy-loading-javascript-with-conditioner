@@ -4,17 +4,22 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <title>Module Aliases</title>
+  <title>Module aliases</title>
   
   <link rel="stylesheet" href="../styles.css">
 
 </head>
 <body>
 
-  <a href="../">Back</a>
+  <a href="../">Index</a>
+
+  <h1>Module aliases</h1>
   
+  <p>Search for a programming language like "JavaScript". The Autocomplete is bound to the <code>&lt;input/&gt;</code> using the <code>data-module</code> attribute. Because we use an alias we can write <code>"autocomplete"</code> instead of <code>"./autocomplete.js"</code></p>
+
   <form>
-	  <input type="text" data-module="autocomplete"/>
+    <label for="languages">Programming languages</label>
+    <input type="text" id="languages" data-module="autocomplete">
   </form>
 
 	<script src="https://unpkg.com/conditioner-core/conditioner-core.js"></script>

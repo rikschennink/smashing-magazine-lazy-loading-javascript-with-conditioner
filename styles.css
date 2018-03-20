@@ -21,6 +21,10 @@ form {
     margin-top: 2em;
 }
 
+body > h1 {
+    font-size:1.5em;
+}
+
 /**
  * Section Toggle
  */
@@ -72,6 +76,11 @@ input {
     box-shadow: inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15);
 }
 
+input:focus {
+    outline:none;
+    border-color:#6b7ce0;
+}
+
 input + ul:empty {
     display: none;
 }
@@ -90,4 +99,19 @@ ul button {
     background: transparent;
     border: none;
     cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-bottom: 1em;
+    font-weight: 500;
+}
+
+code {
+    font-size:1.125em;
+    padding:.125em .25em;
+    color:#483e1d;
+    background:#f3f0e6;
+    border-radius: .25em;
+    white-space: nowrap;
 }
